@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Create the FastAPI app instance
+
 app = FastAPI(
     title="DevGuard AI",
     description="AI-Powered Code Review & Security Analysis",
@@ -22,11 +22,6 @@ app.add_middleware(
 # Health check endpoint 
 @app.get("/")
 async def root():
-    """
-    Root endpoint - confirms the API is running.
-    
-    Try it: curl http://localhost:8000/
-    """
     return {
         "message": "DevGuard AI API",
         "status": "running",
@@ -36,11 +31,6 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    """
-    Health check endpoint for monitoring.
-    python app/main.py
-    Try it: curl http://localhost:8000/health
-    """
     return {
         "status": "healthy",
         "service": "devguard-ai"
